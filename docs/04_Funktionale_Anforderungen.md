@@ -23,6 +23,7 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 ## Import / Upload
 
 - **FA-017** (Muss) Der Benutzer kann manuell einen Eintrag erstellen und eine bestehende Audio-Datei vom Gerät hochladen (z. B. eine Aufnahme aus einem anderen Recorder). Unterstützte Formate: MP3, WAV, M4A. Titel, Notizen, Gruppe und Tags werden wie bei einer normalen Aufnahme erfasst.
+- **FA-027** (Soll) Der Benutzer kann eine Aufnahme als MP3-Datei herunterladen bzw. exportieren (unabhängig vom intern gespeicherten Format, siehe ADR-002).
 
 ## Benutzerkonto und Authentifizierung
 
@@ -51,3 +52,4 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Offene Fragen
 
+- FA-027: Wo findet die Umwandlung nach MP3 statt (in der App oder im Backend)? → Architekturentscheid.

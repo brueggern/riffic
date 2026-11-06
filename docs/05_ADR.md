@@ -34,3 +34,23 @@ Vorlage:
 - Kosten bei ca. 10 GB praktisch null (erste 10 GB gratis, danach ca. $6.95/TB/Monat).
 - Durch die reine Nutzung der S3-API kann der Anbieter später gewechselt werden (z. B. zu Infomaniak bei Bedarf nach Datenstandort Schweiz).
 - Versionierung erhöht den Speicherbedarf leicht; alte Versionen müssen ggf. per Lifecycle-Regel aufgeräumt werden.
+
+## ADR-002: AAC/M4A als Aufnahmeformat
+
+- Status: Akzeptiert
+- Datum: 2026-11-06
+
+**Kontext:** Aufnahmen sollen platzsparend gespeichert werden (ca. 10 GB Gesamtvolumen, RB-003), die Aufnahme muss in unter 1 Sekunde starten (QA-002) und robust sein (QA-008). Android unterstützt die Aufnahme in MP3 nicht nativ.
+
+**Entscheid:** Aufnahmen in der App werden im Format AAC in einem M4A-Container gespeichert und so auch in den Cloud-Speicher hochgeladen. Für den Download wird zusätzlich MP3 angeboten (FA-027).
+
+**Alternativen:**
+- MP3: Gängigstes Format, aber auf Android nur mit zusätzlicher Encoder-Bibliothek aufnehmbar; bei gleicher Dateigrösse eher schlechtere Qualität.
+- WAV: Verlustfrei, aber rund 10-mal grösser; sprengt das Speicherziel.
+- Opus/OGG: Sehr effizient, aber weniger verbreitet bei Abspielgeräten und DAWs.
+
+**Konsequenzen:**
+- Native Android-APIs können verwendet werden, keine zusätzliche Encoder-Bibliothek für die Aufnahme.
+- Kleine Dateien bei guter Qualität.
+- Für den MP3-Download ist eine Umwandlung nötig (App oder Backend, noch offen).
+- Manuell hochgeladene Dateien (FA-017: MP3, WAV, M4A) werden im Originalformat gespeichert, sofern nichts anderes entschieden wird.
