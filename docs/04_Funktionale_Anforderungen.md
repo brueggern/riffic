@@ -35,9 +35,9 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 - **FA-020** (Muss) Es kann mehrere Accounts geben.
 - **FA-021** (Muss) Jeder Account hat genau einen persönlichen Bereich für seine eigenen Aufnahmen. Dieser wird beim Anlegen des Accounts automatisch erstellt.
-- **FA-022** (Muss) Zusätzlich gibt es gemeinsame Bereiche (z. B. „Band“), auf die mehrere Accounts Zugriff haben. Mitglieder eines Bereichs können dort Aufnahmen erstellen und hochladen sowie alle Aufnahmen des Bereichs ansehen und abspielen. Bearbeiten und löschen können sie nur ihre eigenen Aufnahmen.
+- **FA-022** (Muss) Zusätzlich gibt es gemeinsame Bereiche (z. B. „Band“), auf die mehrere Accounts Zugriff haben. Mitglieder eines Bereichs können dort Aufnahmen erstellen und hochladen sowie alle Aufnahmen des Bereichs ansehen und abspielen. Bearbeiten und löschen können sie nur ihre eigenen Aufnahmen. Bei jeder Aufnahme ist ersichtlich, welcher Account sie erstellt hat.
 - **FA-023** (Muss) Ein Account kann Zugriff auf beliebig viele gemeinsame Bereiche haben und in der App zwischen seinem persönlichen Bereich und diesen Bereichen wechseln.
-- **FA-026** (Soll) Der Benutzer kann eigene Aufnahmen von einem Bereich in einen anderen verschieben oder kopieren (z. B. vom persönlichen Bereich in „Band“).
+- **FA-026** (Soll) Der Benutzer kann eigene Aufnahmen von einem Bereich in einen anderen verschieben oder kopieren (z. B. vom persönlichen Bereich in „Band“). Tags werden im Zielbereich anhand des Namens übernommen bzw. dort neu angelegt; die Gruppe wird entfernt.
 - **FA-024** (Muss) Gemeinsame Bereiche werden manuell durch den Administrator erstellt, und er weist ihnen Accounts zu (Einladung von Mitgliedern).
 - **FA-025** (Muss) Für die Administration gibt es Backend-Befehle (z. B. CLI), mindestens zum Erstellen, Bearbeiten und Löschen von Accounts und Bereichen sowie zum Hinzufügen und Entfernen von Mitgliedern eines Bereichs.
 
@@ -51,5 +51,3 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Offene Fragen
 
-- FA-026: Was passiert beim Verschieben/Kopieren mit Gruppe und Tags, da diese pro Bereich gelten? Vorschlag: Tags mit gleichem Namen werden im Zielbereich übernommen bzw. angelegt, die Gruppe wird entfernt.
-- FA-022: Sieht man in einem gemeinsamen Bereich, wer eine Aufnahme erstellt hat?
