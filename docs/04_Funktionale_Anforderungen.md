@@ -22,12 +22,12 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Import / Upload
 
-- **FA-017** (Muss) Der Benutzer kann manuell einen Eintrag erstellen und eine bestehende Audio-Datei vom Gerät hochladen (z. B. eine Aufnahme aus einem anderen Recorder). Titel, Notizen, Gruppe und Tags werden wie bei einer normalen Aufnahme erfasst.
+- **FA-017** (Muss) Der Benutzer kann manuell einen Eintrag erstellen und eine bestehende Audio-Datei vom Gerät hochladen (z. B. eine Aufnahme aus einem anderen Recorder). Unterstützte Formate: MP3, WAV, M4A. Titel, Notizen, Gruppe und Tags werden wie bei einer normalen Aufnahme erfasst.
 
 ## Benutzerkonto und Authentifizierung
 
 - **FA-010** (Muss) Der Benutzer muss sich anmelden (Login), um die App bzw. seine Daten zu nutzen. Vorerst gibt es nur einen Benutzer. Anmeldemethode: E-Mail/Passwort und/oder Passkey (Entscheid offen, siehe Architektur/ADR).
-- **FA-011** (Muss) Nach dem Login bleibt der Benutzer angemeldet, damit QA-001/QA-002 eingehalten werden. Die Session bzw. das Token läuft nach ca. 14 Tagen ab. Ein Ablauf darf eine laufende Aufnahme nie unterbrechen.
+- **FA-011** (Muss) Nach dem Login bleibt der Benutzer angemeldet, damit QA-001/QA-002 eingehalten werden. Die Session bzw. das Token läuft nach ca. 14 Tagen ab. Ein Ablauf darf eine laufende Aufnahme nie unterbrechen. Auch nach Ablauf bleibt das lokale Aufnehmen und Bearbeiten ohne erneuten Login möglich; nur die Synchronisation pausiert bis zum erneuten Login.
 - ~~**FA-012** (Kann) Die App kann zusätzlich per Fingerabdruck (Biometrie) geschützt werden.~~ *Verworfen: Fingerabdruck wird nicht umgesetzt.*
 - **FA-013** (Muss) Benutzerkonten werden manuell angelegt; es gibt vorerst keine Selbstregistrierung.
 
@@ -37,11 +37,8 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 - **FA-015** (Muss) Lokale Daten werden automatisch im Hintergrund auf den Server bzw. in den Cloud-Speicher hochgeladen.
 - **FA-016** (Muss) Die Synchronisation erfolgt in beide Richtungen: Daten vom Server werden auf das Gerät übertragen (z. B. bei neuem Gerät oder mehreren Geräten).
 - **FA-018** (Muss) Bei Konflikten (derselbe Eintrag auf mehreren Geräten geändert) gewinnt die letzte Änderung.
-- **FA-019** (Soll) Nicht alle Audio-Dateien müssen lokal vorliegen; Audio-Dateien, die nicht auf dem Gerät sind, werden bei Bedarf (z. B. beim Abspielen) vom Cloud-Speicher nachgeladen. Metadaten liegen immer vollständig lokal vor.
+- **FA-019** (Soll) Nicht alle Audio-Dateien müssen lokal vorliegen; Audio-Dateien, die nicht auf dem Gerät sind, werden bei Bedarf (z. B. beim Abspielen) vom Cloud-Speicher nachgeladen. Metadaten liegen immer vollständig lokal vor. Lokale Audio-Dateien werden nur manuell durch den Benutzer vom Gerät entfernt (nicht automatisch); die Kopie im Cloud-Speicher bleibt erhalten.
 
 ## Offene Fragen
 
-- FA-011: Was passiert nach Ablauf der Session? Vorschlag: Aufnehmen bleibt lokal weiterhin möglich, nur die Synchronisation pausiert bis zum erneuten Login (sonst Konflikt mit QA-001).
-- FA-017: Welche Audio-Formate sollen unterstützt werden (z. B. MP3, WAV, M4A, FLAC)?
-- FA-019: Werden lokale Audio-Dateien automatisch entfernt (z. B. ältere als X Tage), oder nur manuell?
 
