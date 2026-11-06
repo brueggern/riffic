@@ -16,7 +16,7 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Gruppierung
 
-- **FA-005** (Soll) Der Benutzer kann eine Aufnahme einer Gruppe (Ordner) zuordnen. Eine Aufnahme gehört zu höchstens einer Gruppe.
+- **FA-005** (Soll) Der Benutzer kann eine Aufnahme einer Gruppe (Ordner) zuordnen. Eine Aufnahme gehört zu höchstens einer Gruppe; Aufnahmen ohne Gruppe sind erlaubt. Gruppen sind nicht verschachtelt (keine Unterordner).
 - **FA-008** (Soll) Der Benutzer kann einer Aufnahme beliebig viele Tags zuweisen (z. B. für Stimmung).
 - **FA-009** (Soll) Der Benutzer kann jederzeit neue Tags erstellen.
 
@@ -24,5 +24,3 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Offene Fragen
 
-- FA-005: Muss jede Aufnahme einer Gruppe angehören, oder darf sie auch ohne Gruppe existieren?
-- FA-005: Können Gruppen verschachtelt sein (Unterordner)?
