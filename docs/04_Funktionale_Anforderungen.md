@@ -26,10 +26,19 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Benutzerkonto und Authentifizierung
 
-- **FA-010** (Muss) Der Benutzer muss sich anmelden (Login), um die App bzw. seine Daten zu nutzen. Vorerst gibt es nur einen Benutzer. Anmeldemethode: E-Mail/Passwort und/oder Passkey (Entscheid offen, siehe Architektur/ADR).
+- **FA-010** (Muss) Der Benutzer muss sich anmelden (Login), um die App bzw. seine Daten zu nutzen. Anmeldemethode: E-Mail/Passwort und/oder Passkey (Entscheid offen, siehe Architektur/ADR).
 - **FA-011** (Muss) Nach dem Login bleibt der Benutzer angemeldet, damit QA-001/QA-002 eingehalten werden. Die Session bzw. das Token läuft nach ca. 14 Tagen ab. Ein Ablauf darf eine laufende Aufnahme nie unterbrechen. Auch nach Ablauf bleibt das lokale Aufnehmen und Bearbeiten ohne erneuten Login möglich; nur die Synchronisation pausiert bis zum erneuten Login.
 - ~~**FA-012** (Kann) Die App kann zusätzlich per Fingerabdruck (Biometrie) geschützt werden.~~ *Verworfen: Fingerabdruck wird nicht umgesetzt.*
-- **FA-013** (Muss) Benutzerkonten werden manuell angelegt; es gibt vorerst keine Selbstregistrierung.
+- **FA-013** (Muss) Es gibt keine Selbstregistrierung. Accounts werden manuell durch den Administrator per Backend-Befehl (z. B. CLI) angelegt.
+
+## Accounts und Bereiche (Mandanten)
+
+- **FA-020** (Muss) Es kann mehrere Accounts geben.
+- **FA-021** (Muss) Jeder Account hat genau einen persönlichen Bereich für seine eigenen Aufnahmen.
+- **FA-022** (Muss) Zusätzlich gibt es gemeinsame Bereiche (z. B. „Band“), auf die mehrere Accounts Zugriff haben. Mitglieder eines Bereichs können dort Aufnahmen erstellen und hochladen.
+- **FA-023** (Muss) Ein Account kann Zugriff auf beliebig viele gemeinsame Bereiche haben und in der App zwischen seinem persönlichen Bereich und diesen Bereichen wechseln.
+- **FA-024** (Muss) Gemeinsame Bereiche werden manuell durch den Administrator erstellt, und er weist ihnen Accounts zu (Einladung von Mitgliedern).
+- **FA-025** (Muss) Für die Administration gibt es Backend-Befehle (z. B. CLI), mindestens zum Erstellen, Bearbeiten und Löschen von Accounts und Bereichen sowie zum Hinzufügen und Entfernen von Mitgliedern eines Bereichs.
 
 ## Synchronisation
 
@@ -40,5 +49,8 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 - **FA-019** (Soll) Nicht alle Audio-Dateien müssen lokal vorliegen; Audio-Dateien, die nicht auf dem Gerät sind, werden bei Bedarf (z. B. beim Abspielen) vom Cloud-Speicher nachgeladen. Metadaten liegen immer vollständig lokal vor. Lokale Audio-Dateien werden nur manuell durch den Benutzer vom Gerät entfernt (nicht automatisch); die Kopie im Cloud-Speicher bleibt erhalten.
 
 ## Offene Fragen
-
-
+- FA-021: Wird der persönliche Bereich automatisch beim Anlegen des Accounts erstellt? (Annahme: ja)
+- FA-022: Dürfen Mitglieder eines gemeinsamen Bereichs Aufnahmen anderer Mitglieder bearbeiten und löschen, oder nur ihre eigenen?
+- FA-005/FA-008: Gelten Gruppen und Tags pro Bereich, oder sind sie bereichsübergreifend pro Account?
+- FA-023: Kann eine Aufnahme von einem Bereich in einen anderen verschoben oder kopiert werden (z. B. vom persönlichen Bereich in „Band“)?
+- FA-016: Werden alle Bereiche eines Accounts auf das Gerät synchronisiert, oder nur der aktuell gewählte?
