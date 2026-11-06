@@ -11,5 +11,6 @@ Nicht-funktionale Anforderungen, möglichst messbar formuliert.
 | QA-005 | Sicherheit / Mandantenfähigkeit | Die Daten der Bereiche (Mandanten) sind strikt voneinander getrennt. Ein späterer Ausbau zu einer SaaS-Lösung soll nicht verbaut werden. | Muss |
 | QA-006 | Verfügbarkeit | Aufnehmen und Bearbeiten funktionieren vollständig ohne Netzverbindung (Offline-First, siehe FA-014). | Muss |
 | QA-007 | Usability | Upload und Synchronisation beeinträchtigen die Bedienung der App nicht (laufen im Hintergrund, blockieren keine Eingaben). | Muss |
+| QA-008 | Zuverlässigkeit / Datensicherheit | Es dürfen keine Audio-Dateien verloren gehen. Die gesamte Kette von der Aufnahme über die lokale Speicherung bis zur Synchronisation in den Cloud-Speicher muss robust sein (z. B. bei App-Absturz, leerem Akku, Verbindungsabbruch während des Uploads). | Muss |
 
 ## Offene Fragen
