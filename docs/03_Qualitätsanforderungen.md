@@ -12,5 +12,6 @@ Nicht-funktionale Anforderungen, möglichst messbar formuliert.
 | QA-006 | Verfügbarkeit | Aufnehmen und Bearbeiten funktionieren vollständig ohne Netzverbindung (Offline-First, siehe FA-014). | Muss |
 | QA-007 | Usability | Upload und Synchronisation beeinträchtigen die Bedienung der App nicht (laufen im Hintergrund, blockieren keine Eingaben). | Muss |
 | QA-008 | Zuverlässigkeit / Datensicherheit | Es dürfen keine Audio-Dateien verloren gehen. Die gesamte Kette von der Aufnahme über die lokale Speicherung bis zur Synchronisation in den Cloud-Speicher muss robust sein (z. B. bei App-Absturz, leerem Akku, Verbindungsabbruch während des Uploads). | Muss |
+| QA-009 | Austauschbarkeit | Der Cloud-Speicher muss ohne Änderungen an der App austauschbar sein. Der Zugriff erfolgt ausschliesslich über die S3-kompatible API, ohne anbieterspezifische Funktionen in der Anwendungslogik. | Muss |
 
 ## Offene Fragen

@@ -6,7 +6,7 @@ Vorgegebene Einschränkungen, die nicht verhandelbar sind bzw. von aussen kommen
 
 - **RB-001** Zielplattform ist Android (Smartphone des Projektinhabers). iOS ist nicht geplant, könnte aber später dazukommen (siehe QA-003).
 - **RB-002** Ein eigener VPS (bei Contabo) und eine eigene Domain sind vorhanden und sollen für das Backend genutzt werden.
-- **RB-003** Die Audio-Dateien werden nicht auf dem VPS abgelegt, sondern in einem separaten, sicheren Cloud-Speicher (Anbieter noch offen). Kein Self-Hosting des Speichers, um das Risiko von Datenverlust und den Aufwand für Backups zu vermeiden. Erwartetes Datenvolumen: ca. 10 GB.
+- **RB-003** Die Audio-Dateien werden nicht auf dem VPS abgelegt, sondern in einem separaten, sicheren Cloud-Speicher (Anbieter noch offen). Kein Self-Hosting des Speichers, um das Risiko von Datenverlust und den Aufwand für Backups zu vermeiden. Erwartetes Datenvolumen: ca. 10 GB. Ein bestimmter Datenstandort (Schweiz/EU) ist derzeit nicht gefordert. Gewählt: Backblaze B2 (siehe ADR-001).
 
 ## Organisatorische Randbedingungen
 
@@ -15,6 +15,3 @@ Vorgegebene Einschränkungen, die nicht verhandelbar sind bzw. von aussen kommen
 ## Rechtliche Randbedingungen
 
 ## Offene Fragen
-
-- RB-003: Welcher Cloud-Speicher (Anbieter, Standort/Region, Kosten)? → Entscheid als ADR. Kandidaten: Backblaze B2, Cloudflare R2, Hetzner, Infomaniak, Contabo Object Storage, Google Drive.
-- Ist ein Datenstandort in der Schweiz bzw. EU eine Anforderung (Projektinhaber wohnt in der Schweiz)?
