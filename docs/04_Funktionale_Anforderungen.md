@@ -6,6 +6,7 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 - **FA-001** (Muss) Der Benutzer kann direkt vom Startbildschirm eine neue Audio-Aufnahme starten.
 - **FA-002** (Muss) Der Benutzer kann eine laufende Aufnahme beenden; die Aufnahme wird gespeichert.
+- **FA-029** (Muss) Der Benutzer kann Aufnahmen abspielen, in der Mobile App und in der Web-App.
 
 ## Verwaltung von Einträgen
 
@@ -44,7 +45,7 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Desktop
 
-- **FA-028** (Muss) Der Benutzer kann Riffic auch auf dem Desktop nutzen, insbesondere zum Gruppieren und Verwalten von Aufnahmen (Titel, Notizen, Gruppen, Tags, Bereiche). Es gelten dieselben Daten wie auf dem Smartphone (Synchronisation, FA-016). Der Desktop-Zugang ist eine Web-App im Browser und dient nur der Verwaltung; Aufnehmen ist auf dem Desktop nicht vorgesehen. Die Web-App benötigt keinen Offline-Betrieb.
+- **FA-028** (Muss) Der Benutzer kann Riffic auch auf dem Desktop nutzen, insbesondere zum Gruppieren und Verwalten von Aufnahmen (Titel, Notizen, Gruppen, Tags, Bereiche). Es gelten dieselben Daten wie auf dem Smartphone (Synchronisation, FA-016). Der Desktop-Zugang ist eine Web-App im Browser und dient nur der Verwaltung; Aufnehmen ist auf dem Desktop nicht vorgesehen. Die Web-App benötigt keinen Offline-Betrieb. In der Web-App sind zudem Abspielen (FA-029), manueller Upload von Dateien (FA-017) und MP3-Download (FA-027) möglich.
 
 ## Synchronisation
 
@@ -56,5 +57,4 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Offene Fragen
 
-- FA-028: Gehören Abspielen, manueller Upload von Dateien (FA-017) und MP3-Download (FA-027) zur Verwaltung in der Web-App?
 - FA-027: Wo findet die Umwandlung nach MP3 statt (in der App oder im Backend)? → Architekturentscheid.
