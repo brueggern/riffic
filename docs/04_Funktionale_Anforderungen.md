@@ -49,6 +49,7 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 - **FA-019** (Soll) Nicht alle Audio-Dateien müssen lokal vorliegen; Audio-Dateien, die nicht auf dem Gerät sind, werden bei Bedarf (z. B. beim Abspielen) vom Cloud-Speicher nachgeladen. Metadaten liegen immer vollständig lokal vor. Lokale Audio-Dateien werden nur manuell durch den Benutzer vom Gerät entfernt (nicht automatisch); die Kopie im Cloud-Speicher bleibt erhalten.
 
 ## Offene Fragen
+
 - FA-021: Wird der persönliche Bereich automatisch beim Anlegen des Accounts erstellt? (Annahme: ja)
 - FA-022: Dürfen Mitglieder eines gemeinsamen Bereichs Aufnahmen anderer Mitglieder bearbeiten und löschen, oder nur ihre eigenen?
 - FA-005/FA-008: Gelten Gruppen und Tags pro Bereich, oder sind sie bereichsübergreifend pro Account?
