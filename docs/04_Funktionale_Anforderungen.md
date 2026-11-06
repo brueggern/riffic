@@ -26,17 +26,18 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 - **FA-010** (Muss) Der Benutzer muss sich anmelden (Login), um die App bzw. seine Daten zu nutzen. Vorerst gibt es nur einen Benutzer. Anmeldemethode: E-Mail/Passwort und/oder Passkey (Entscheid offen, siehe Architektur/ADR).
 - **FA-011** (Muss) Nach dem ersten Login bleibt der Benutzer dauerhaft angemeldet, damit QA-001/QA-002 eingehalten werden.
-- **FA-012** (Kann) Die App kann zusätzlich per Fingerabdruck (Biometrie) geschützt werden.
+- **FA-012** (Kann) Die App kann zusätzlich per Fingerabdruck (Biometrie) geschützt werden. Der Fingerabdruck wird nicht bei jedem Öffnen der App abgefragt.
 - **FA-013** (Muss) Benutzerkonten werden manuell angelegt; es gibt vorerst keine Selbstregistrierung.
 
 ## Synchronisation
 
 - **FA-014** (Muss) Aufnahmen und Metadaten werden zuerst lokal auf dem Gerät gespeichert.
-- **FA-015** (Muss) Lokale Daten können auf den Server bzw. in einen Cloud-Speicher hochgeladen werden.
+- **FA-015** (Muss) Lokale Daten werden automatisch im Hintergrund auf den Server bzw. in den Cloud-Speicher hochgeladen.
+- **FA-016** (Muss) Die Synchronisation erfolgt in beide Richtungen: Daten vom Server werden auf das Gerät übertragen (z. B. bei neuem Gerät oder mehreren Geräten).
 
 ## Offene Fragen
 
-- FA-012: Soll der Fingerabdruck bei jedem Öffnen der App abgefragt werden? Das kostet Zeit vor der Aufnahme (QA-002).
-- FA-015: Erfolgt der Upload automatisch im Hintergrund oder manuell durch den Benutzer?
-- FA-015: Ist eine Synchronisation in beide Richtungen nötig (z. B. neues Gerät, mehrere Geräte), oder dient der Upload nur als Backup?
+- FA-012: Wann wird der Fingerabdruck stattdessen abgefragt (z. B. nur bei erneuter Anmeldung)?
+- FA-016: Wie werden Konflikte behandelt, wenn derselbe Eintrag auf zwei Geräten geändert wurde (z. B. letzte Änderung gewinnt)?
+- FA-016: Sollen auf dem Gerät immer alle Audio-Dateien lokal vorliegen, oder werden ältere bei Bedarf nachgeladen (Speicherplatz)?
 
