@@ -22,5 +22,13 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Import / Upload
 
+## Benutzerkonto und Authentifizierung
+
+- **FA-010** (Muss) Der Benutzer muss sich anmelden (Login), um die App bzw. seine Daten zu nutzen. Vorerst gibt es nur einen Benutzer.
+
 ## Offene Fragen
+
+- FA-010: Welche Anmeldemethode (E-Mail/Passwort, Google-Konto, Biometrie …)?
+- FA-010: Wie lange bleibt der Benutzer angemeldet? Ein Login vor jeder Aufnahme stünde im Konflikt mit QA-001/QA-002.
+- FA-010: Gibt es eine Registrierung, oder wird der Benutzer vorerst manuell angelegt?
 

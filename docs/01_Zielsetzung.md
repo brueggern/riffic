@@ -13,6 +13,10 @@ Riffic ist eine Mobile App, mit der Musiker Songideen schnell festhalten, ergän
 
 - Die App ist primär für den persönlichen Gebrauch des Projektinhabers (Musiker) gedacht, der Ideen unterwegs mit dem Smartphone festhält.
 
+## Ausblick
+
+- Langfristig ist denkbar, Riffic als mandantenfähige SaaS-Lösung für mehrere Benutzer anzubieten (siehe QA-005).
+
 ## Abgrenzung
 
 ## Offene Fragen
