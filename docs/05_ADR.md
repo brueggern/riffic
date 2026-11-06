@@ -52,5 +52,23 @@ Vorlage:
 **Konsequenzen:**
 - Native Android-APIs können verwendet werden, keine zusätzliche Encoder-Bibliothek für die Aufnahme.
 - Kleine Dateien bei guter Qualität.
-- Für den MP3-Download ist eine Umwandlung nötig (App oder Backend, noch offen).
+- Für den MP3-Download ist eine Umwandlung nötig (im Backend, siehe ADR-003).
 - Manuell hochgeladene Dateien (FA-017: MP3, WAV, M4A) werden im Originalformat gespeichert, sofern nichts anderes entschieden wird.
+
+## ADR-003: MP3-Umwandlung im Backend beim Download
+
+- Status: Akzeptiert
+- Datum: 2026-11-06
+
+**Kontext:** Aufnahmen werden als AAC/M4A gespeichert (ADR-002), für den Download soll MP3 angeboten werden (FA-027), sowohl in der Mobile App als auch in der Web-App (FA-028).
+
+**Entscheid:** Die Umwandlung nach MP3 erfolgt im Backend, und zwar erst bei der Download-Anfrage (on demand). Dateien, die bereits als MP3 vorliegen, werden ohne Umwandlung ausgeliefert.
+
+**Alternativen:**
+- Umwandlung in der App bzw. im Browser: Wäre in Mobile App und Web-App doppelt umzusetzen und belastet das Gerät.
+- MP3 bereits beim Upload erzeugen und zusätzlich speichern: Doppelter Speicherbedarf für Dateien, die selten heruntergeladen werden.
+
+**Konsequenzen:**
+- Eine einzige Implementierung für alle Clients.
+- Das Backend auf dem VPS benötigt ein Werkzeug zur Audio-Umwandlung (z. B. FFmpeg).
+- Der Download dauert etwas länger, da die Datei zuerst aus dem Cloud-Speicher geladen und umgewandelt wird.
