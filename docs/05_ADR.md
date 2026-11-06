@@ -66,9 +66,10 @@ Vorlage:
 
 **Alternativen:**
 - Umwandlung in der App bzw. im Browser: Wäre in Mobile App und Web-App doppelt umzusetzen und belastet das Gerät.
-- MP3 bereits beim Upload erzeugen und zusätzlich speichern: Doppelter Speicherbedarf für Dateien, die selten heruntergeladen werden.
+- MP3 nach Upload bzw. Synchronisation im Hintergrund erzeugen und zusätzlich speichern: Schnellerer Download, aber Job-Verarbeitung mit Fehlerbehandlung nötig, zwei Dateien pro Aufnahme konsistent zu halten und doppelter Speicherbedarf. Verworfen, da MP3-Downloads selten sind und weniger bewegliche Teile die Robustheit (QA-008) unterstützen.
 
 **Konsequenzen:**
 - Eine einzige Implementierung für alle Clients.
 - Das Backend auf dem VPS benötigt ein Werkzeug zur Audio-Umwandlung (z. B. FFmpeg).
 - Der Download dauert etwas länger, da die Datei zuerst aus dem Cloud-Speicher geladen und umgewandelt wird.
+- Falls die Wartezeit stört, kann eine einmal erzeugte MP3 später im Backend zwischengespeichert werden (Option, noch nicht entschieden).
