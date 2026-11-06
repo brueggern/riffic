@@ -44,7 +44,7 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Desktop
 
-- **FA-028** (Muss) Der Benutzer kann Riffic auch auf dem Desktop nutzen, insbesondere zum Gruppieren und Verwalten von Aufnahmen (Titel, Notizen, Gruppen, Tags, Bereiche). Es gelten dieselben Daten wie auf dem Smartphone (Synchronisation, FA-016). Der Desktop-Zugang ist eine Web-App im Browser und dient nur der Verwaltung; Aufnehmen ist auf dem Desktop nicht vorgesehen.
+- **FA-028** (Muss) Der Benutzer kann Riffic auch auf dem Desktop nutzen, insbesondere zum Gruppieren und Verwalten von Aufnahmen (Titel, Notizen, Gruppen, Tags, Bereiche). Es gelten dieselben Daten wie auf dem Smartphone (Synchronisation, FA-016). Der Desktop-Zugang ist eine Web-App im Browser und dient nur der Verwaltung; Aufnehmen ist auf dem Desktop nicht vorgesehen. Die Web-App benötigt keinen Offline-Betrieb.
 
 ## Synchronisation
 
@@ -57,5 +57,4 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 ## Offene Fragen
 
 - FA-028: Gehören Abspielen, manueller Upload von Dateien (FA-017) und MP3-Download (FA-027) zur Verwaltung in der Web-App?
-- FA-028: Muss der Desktop auch offline funktionieren, oder reicht Online-Betrieb?
 - FA-027: Wo findet die Umwandlung nach MP3 statt (in der App oder im Backend)? → Architekturentscheid.
