@@ -16,8 +16,8 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Gruppierung
 
-- **FA-005** (Soll) Der Benutzer kann eine Aufnahme einer Gruppe (Ordner) zuordnen. Eine Aufnahme gehört zu höchstens einer Gruppe; Aufnahmen ohne Gruppe sind erlaubt. Gruppen sind nicht verschachtelt (keine Unterordner).
-- **FA-008** (Soll) Der Benutzer kann einer Aufnahme beliebig viele Tags zuweisen (z. B. für Stimmung).
+- **FA-005** (Soll) Der Benutzer kann eine Aufnahme einer Gruppe (Ordner) zuordnen. Gruppen gehören zu einem Bereich. Eine Aufnahme gehört zu höchstens einer Gruppe; Aufnahmen ohne Gruppe sind erlaubt. Gruppen sind nicht verschachtelt (keine Unterordner).
+- **FA-008** (Soll) Der Benutzer kann einer Aufnahme beliebig viele Tags zuweisen (z. B. für Stimmung). Tags gehören zu einem Bereich.
 - **FA-009** (Soll) Der Benutzer kann jederzeit neue Tags erstellen.
 
 ## Import / Upload
@@ -34,9 +34,10 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 ## Accounts und Bereiche (Mandanten)
 
 - **FA-020** (Muss) Es kann mehrere Accounts geben.
-- **FA-021** (Muss) Jeder Account hat genau einen persönlichen Bereich für seine eigenen Aufnahmen.
-- **FA-022** (Muss) Zusätzlich gibt es gemeinsame Bereiche (z. B. „Band“), auf die mehrere Accounts Zugriff haben. Mitglieder eines Bereichs können dort Aufnahmen erstellen und hochladen.
+- **FA-021** (Muss) Jeder Account hat genau einen persönlichen Bereich für seine eigenen Aufnahmen. Dieser wird beim Anlegen des Accounts automatisch erstellt.
+- **FA-022** (Muss) Zusätzlich gibt es gemeinsame Bereiche (z. B. „Band“), auf die mehrere Accounts Zugriff haben. Mitglieder eines Bereichs können dort Aufnahmen erstellen und hochladen sowie alle Aufnahmen des Bereichs ansehen und abspielen. Bearbeiten und löschen können sie nur ihre eigenen Aufnahmen.
 - **FA-023** (Muss) Ein Account kann Zugriff auf beliebig viele gemeinsame Bereiche haben und in der App zwischen seinem persönlichen Bereich und diesen Bereichen wechseln.
+- **FA-026** (Soll) Der Benutzer kann eigene Aufnahmen von einem Bereich in einen anderen verschieben oder kopieren (z. B. vom persönlichen Bereich in „Band“).
 - **FA-024** (Muss) Gemeinsame Bereiche werden manuell durch den Administrator erstellt, und er weist ihnen Accounts zu (Einladung von Mitgliedern).
 - **FA-025** (Muss) Für die Administration gibt es Backend-Befehle (z. B. CLI), mindestens zum Erstellen, Bearbeiten und Löschen von Accounts und Bereichen sowie zum Hinzufügen und Entfernen von Mitgliedern eines Bereichs.
 
@@ -44,14 +45,11 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 - **FA-014** (Muss) Aufnahmen und Metadaten werden zuerst lokal auf dem Gerät gespeichert.
 - **FA-015** (Muss) Lokale Daten werden automatisch im Hintergrund auf den Server bzw. in den Cloud-Speicher hochgeladen.
-- **FA-016** (Muss) Die Synchronisation erfolgt in beide Richtungen: Daten vom Server werden auf das Gerät übertragen (z. B. bei neuem Gerät oder mehreren Geräten).
+- **FA-016** (Muss) Die Synchronisation erfolgt in beide Richtungen: Daten vom Server werden auf das Gerät übertragen (z. B. bei neuem Gerät oder mehreren Geräten). Es werden alle Bereiche synchronisiert, auf die der Account Zugriff hat.
 - **FA-018** (Muss) Bei Konflikten (derselbe Eintrag auf mehreren Geräten geändert) gewinnt die letzte Änderung.
 - **FA-019** (Soll) Nicht alle Audio-Dateien müssen lokal vorliegen; Audio-Dateien, die nicht auf dem Gerät sind, werden bei Bedarf (z. B. beim Abspielen) vom Cloud-Speicher nachgeladen. Metadaten liegen immer vollständig lokal vor. Lokale Audio-Dateien werden nur manuell durch den Benutzer vom Gerät entfernt (nicht automatisch); die Kopie im Cloud-Speicher bleibt erhalten.
 
 ## Offene Fragen
 
-- FA-021: Wird der persönliche Bereich automatisch beim Anlegen des Accounts erstellt? (Annahme: ja)
-- FA-022: Dürfen Mitglieder eines gemeinsamen Bereichs Aufnahmen anderer Mitglieder bearbeiten und löschen, oder nur ihre eigenen?
-- FA-005/FA-008: Gelten Gruppen und Tags pro Bereich, oder sind sie bereichsübergreifend pro Account?
-- FA-023: Kann eine Aufnahme von einem Bereich in einen anderen verschoben oder kopiert werden (z. B. vom persönlichen Bereich in „Band“)?
-- FA-016: Werden alle Bereiche eines Accounts auf das Gerät synchronisiert, oder nur der aktuell gewählte?
+- FA-026: Was passiert beim Verschieben/Kopieren mit Gruppe und Tags, da diese pro Bereich gelten? Vorschlag: Tags mit gleichem Namen werden im Zielbereich übernommen bzw. angelegt, die Gruppe wird entfernt.
+- FA-022: Sieht man in einem gemeinsamen Bereich, wer eine Aufnahme erstellt hat?
