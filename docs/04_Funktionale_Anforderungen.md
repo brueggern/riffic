@@ -42,6 +42,10 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 - **FA-024** (Muss) Gemeinsame Bereiche werden manuell durch den Administrator erstellt, und er weist ihnen Accounts zu (Einladung von Mitgliedern).
 - **FA-025** (Muss) Für die Administration gibt es Backend-Befehle (z. B. CLI), mindestens zum Erstellen, Bearbeiten und Löschen von Accounts und Bereichen sowie zum Hinzufügen und Entfernen von Mitgliedern eines Bereichs.
 
+## Desktop
+
+- **FA-028** (Muss) Der Benutzer kann Riffic auch auf dem Desktop nutzen, insbesondere zum Gruppieren und Verwalten von Aufnahmen (Titel, Notizen, Gruppen, Tags, Bereiche). Es gelten dieselben Daten wie auf dem Smartphone (Synchronisation, FA-016).
+
 ## Synchronisation
 
 - **FA-014** (Muss) Aufnahmen und Metadaten werden zuerst lokal auf dem Gerät gespeichert.
@@ -52,4 +56,6 @@ Gruppiert nach Funktionsbereichen. Priorität: Muss / Soll / Kann.
 
 ## Offene Fragen
 
+- FA-028: Welche Funktionen braucht es auf dem Desktop zusätzlich: Abspielen, manueller Upload von Dateien (FA-017), MP3-Download (FA-027), Aufnehmen?
+- FA-028: Muss der Desktop auch offline funktionieren, oder reicht Online-Betrieb?
 - FA-027: Wo findet die Umwandlung nach MP3 statt (in der App oder im Backend)? → Architekturentscheid.
