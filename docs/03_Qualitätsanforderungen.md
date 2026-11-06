@@ -9,7 +9,7 @@ Nicht-funktionale Anforderungen, möglichst messbar formuliert.
 | QA-003 | Portierbarkeit | Eine spätere iOS-Version soll durch technische Entscheide nicht verbaut werden (siehe RB-001). | Kann |
 | QA-004 | Sicherheit | Alle Daten (Aufnahmen, Notizen, Metadaten) sind durch Authentifizierung geschützt und nur für den angemeldeten Benutzer zugänglich. | Muss |
 | QA-005 | Erweiterbarkeit | Ein späterer Ausbau zu einer mandantenfähigen SaaS-Lösung (Multi-Tenant) soll durch technische Entscheide nicht verbaut werden. | Kann |
+| QA-006 | Verfügbarkeit | Aufnehmen und Bearbeiten funktionieren vollständig ohne Netzverbindung (Offline-First, siehe FA-014). | Muss |
+| QA-007 | Usability | Upload und Synchronisation beeinträchtigen die Bedienung der App nicht (laufen im Hintergrund, blockieren keine Eingaben). | Muss |
 
 ## Offene Fragen
-
-- QA-004: Ist mit dem Login ein Server/Cloud-Speicher verbunden (Daten liegen online), oder bleiben die Daten vorerst lokal auf dem Gerät?
