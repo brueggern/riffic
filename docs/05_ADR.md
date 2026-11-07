@@ -89,3 +89,24 @@ Vorlage:
 
 **Konsequenzen:**
 - Datenbank-Backups müssen eingerichtet werden (z. B. regelmässiger Dump in den Cloud-Speicher), da die Metadaten sonst nur auf dem VPS liegen.
+
+## ADR-005: Capacitor für Mobile App und Web-App aus einer Codebasis
+
+- Status: Akzeptiert
+- Datum: 2026-11-07
+
+**Kontext:** Mobile App (Android, später evtl. iOS) und Web-App im Browser sollen aus einer gemeinsamen Codebasis entstehen (QA-010, RB-001, QA-003). Die Web-App muss genauso performant und gut nutzbar sein wie eine klassische Web-Anwendung. Nur die Aufnahme ist ein Mobile-spezifisches Feature und muss schnell starten (QA-002) und robust sein (QA-008).
+
+**Entscheid:** Das Frontend wird als Web-Anwendung (HTML/CSS) entwickelt und mit Capacitor als Android-App (später iOS) ausgeliefert. Die Aufnahme wird als natives Capacitor-Plugin (Kotlin, Android Foreground Service) umgesetzt. Das UI-Framework ist offen und wird separat entschieden.
+
+**Alternativen:**
+- Flutter: Sehr gute Mobile-Performance, aber Flutter Web rendert auf ein Canvas (grössere Startlast, eingeschränkte Textauswahl, weniger natives Browserverhalten). Erfüllt die Anforderung an die Web-App nicht.
+- Compose Multiplatform (Kotlin): Web-Target noch im Beta-Status.
+- React Native mit Expo und react-native-web: Native Mobile-UI, Web ist aber eher eine „Mobile App im Browser“; kein normales CSS/Tailwind; an React gebunden.
+- Getrennte Codebasen (z. B. native Android-App und separate Web-App): Widerspricht QA-010.
+
+**Konsequenzen:**
+- Web-App und Mobile App teilen UI-Komponenten, Logik und API-Client; die Web-App ist eine vollwertige Web-Anwendung.
+- Freie Wahl des UI-Frameworks (Vue, React, Svelte …).
+- Die Mobile App läuft in einer WebView; für die Aufnahme und ggf. weitere Gerätefunktionen sind native Plugins nötig.
+- Offline-Datenhaltung (QA-006) braucht auf Mobile eine lokale Datenbank (z. B. SQLite-Plugin); die Datenzugriffsschicht muss Mobile (offline) und Web (online) abstrahieren.
