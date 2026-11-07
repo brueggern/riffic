@@ -12,8 +12,8 @@ Vorgegebene Einschränkungen, die nicht verhandelbar sind bzw. von aussen kommen
 
 ## Organisatorische Randbedingungen
 
-- **RB-007** Der Projektinhaber entwickelt selbst und kennt Laravel, Vue, Tailwind, JavaScript und HTML5 gut. Neue Technologien sind möglich.
 - **RB-004** Die Betriebskosten (insbesondere für den Cloud-Speicher) sollen möglichst gering sein.
+- **RB-007** Der Projektinhaber entwickelt selbst und kennt Laravel, Vue, Tailwind, JavaScript und HTML5 gut. Neue Technologien sind möglich.
 
 ## Rechtliche Randbedingungen
 
