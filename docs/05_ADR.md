@@ -97,7 +97,7 @@ Vorlage:
 
 **Kontext:** Mobile App (Android, später evtl. iOS) und Web-App im Browser sollen aus einer gemeinsamen Codebasis entstehen (QA-010, RB-001, QA-003). Die Web-App muss genauso performant und gut nutzbar sein wie eine klassische Web-Anwendung. Nur die Aufnahme ist ein Mobile-spezifisches Feature und muss schnell starten (QA-002) und robust sein (QA-008).
 
-**Entscheid:** Das Frontend wird als Web-Anwendung (HTML/CSS) entwickelt und mit Capacitor als Android-App (später iOS) ausgeliefert. Die Aufnahme wird als natives Capacitor-Plugin (Kotlin, Android Foreground Service) umgesetzt. Das UI-Framework ist offen und wird separat entschieden.
+**Entscheid:** Das Frontend wird als Web-Anwendung (HTML/CSS) entwickelt und mit Capacitor als Android-App (später iOS) ausgeliefert. Die Aufnahme wird als natives Capacitor-Plugin (Kotlin, Android Foreground Service) umgesetzt. Das UI-Framework wird separat entschieden (siehe ADR-006).
 
 **Alternativen:**
 - Flutter: Sehr gute Mobile-Performance, aber Flutter Web rendert auf ein Canvas (grössere Startlast, eingeschränkte Textauswahl, weniger natives Browserverhalten). Erfüllt die Anforderung an die Web-App nicht.
@@ -110,3 +110,21 @@ Vorlage:
 - Freie Wahl des UI-Frameworks (Vue, React, Svelte …).
 - Die Mobile App läuft in einer WebView; für die Aufnahme und ggf. weitere Gerätefunktionen sind native Plugins nötig.
 - Offline-Datenhaltung (QA-006) braucht auf Mobile eine lokale Datenbank (z. B. SQLite-Plugin); die Datenzugriffsschicht muss Mobile (offline) und Web (online) abstrahieren.
+
+## ADR-006: React mit TypeScript, Vite und Tailwind als Frontend-Stack
+
+- Status: Akzeptiert
+- Datum: 2026-11-07
+
+**Kontext:** Für das Capacitor-Frontend (ADR-005) muss ein UI-Framework gewählt werden. Der Projektinhaber kennt Vue gut, möchte aber gerne etwas Neues lernen (RB-007). Das Frontend soll zukunftssicher sein und gute Unterstützung für mobile UI-Muster bieten.
+
+**Entscheid:** Das Frontend wird mit React und TypeScript entwickelt, mit Vite als Build-Tool und Tailwind CSS für das Styling.
+
+**Alternativen:**
+- Vue: Bekannt und sofort produktiv, solide; aber kein Lerneffekt im Frontend und kleineres Ökosystem als React.
+- Svelte 5: Schlanker Code und hohe Entwicklerzufriedenheit, aber kleineres Ökosystem und keine offizielle Ionic-Unterstützung; mobile UI-Muster müssten vermehrt selbst gebaut werden.
+
+**Konsequenzen:**
+- Grösstes Ökosystem und breite Unterstützung (Bibliotheken, Dokumentation, KI-Assistenten).
+- TypeScript ermöglicht typsichere Datenmodelle und API-Client, geteilt zwischen Web und Mobile.
+- Einarbeitung in React (Hooks, State-Management) nötig.
