@@ -73,3 +73,19 @@ Vorlage:
 - Das Backend auf dem VPS benötigt ein Werkzeug zur Audio-Umwandlung (z. B. FFmpeg).
 - Der Download dauert etwas länger, da die Datei zuerst aus dem Cloud-Speicher geladen und umgewandelt wird.
 - Falls die Wartezeit stört, kann eine einmal erzeugte MP3 später im Backend zwischengespeichert werden (Option, noch nicht entschieden).
+
+## ADR-004: PostgreSQL als Datenbank des Backends
+
+- Status: Akzeptiert
+- Datum: 2026-11-07
+
+**Kontext:** Das Backend verwaltet Accounts, Bereiche (Mandanten), Mitgliedschaften und die Metadaten der Aufnahmen (Titel, Notizen, Gruppen, Tags, Datumsfelder). Die Daten der Bereiche müssen strikt getrennt sein (QA-005), und die Synchronisation braucht verlässliche Transaktionen (QA-008).
+
+**Entscheid:** PostgreSQL wird als Datenbank verwendet und als Docker-Container auf dem VPS betrieben (RB-005).
+
+**Alternativen:**
+- MySQL/MariaDB: Ebenfalls gut geeignet und in Laravel verbreitet; PostgreSQL bietet aber mehr Möglichkeiten (z. B. Row-Level Security für die Mandantentrennung, bessere JSON-Unterstützung).
+- SQLite: Für ein Backend mit mehreren gleichzeitigen Clients und späterem SaaS-Ausbau zu eingeschränkt.
+
+**Konsequenzen:**
+- Datenbank-Backups müssen eingerichtet werden (z. B. regelmässiger Dump in den Cloud-Speicher), da die Metadaten sonst nur auf dem VPS liegen.
