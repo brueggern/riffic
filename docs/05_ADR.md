@@ -128,3 +128,20 @@ Vorlage:
 - Grösstes Ökosystem und breite Unterstützung (Bibliotheken, Dokumentation, KI-Assistenten).
 - TypeScript ermöglicht typsichere Datenmodelle und API-Client, geteilt zwischen Web und Mobile.
 - Einarbeitung in React (Hooks, State-Management) nötig.
+
+## ADR-007: Tailwind CSS mit shadcn/ui als UI-Komponenten
+
+- Status: Akzeptiert
+- Datum: 2026-11-07
+
+**Kontext:** Mobile App und Web-App teilen sich die UI (QA-010, ADR-005). Die Web-App soll eine vollwertige Desktop-Oberfläche sein; die mobile Oberfläche ist überschaubar (Liste, Aufnahme, Detailansicht).
+
+**Entscheid:** UI-Komponenten basieren auf shadcn/ui (Radix-Primitives, Code liegt im Projekt) und werden mit Tailwind CSS gestylt. Mobile Gesten und Übergänge werden bei Bedarf mit gezielten Zusatzbibliotheken ergänzt.
+
+**Alternativen:**
+- Ionic React: Fertige mobile Komponenten mit nativem Gefühl, aber auf dem Desktop eher „App-Look“; teilweise Überschneidung mit Tailwind.
+
+**Konsequenzen:**
+- Volle Kontrolle über Aussehen und Verhalten, gut für Desktop und Mobile.
+- Barrierefreiheit über Radix-Primitives.
+- Mobile-typische Muster (z. B. Swipe-Aktionen, Bottom-Sheets) müssen teilweise selbst umgesetzt werden.
