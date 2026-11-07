@@ -13,5 +13,6 @@ Nicht-funktionale Anforderungen, möglichst messbar formuliert.
 | QA-007 | Usability | Upload und Synchronisation beeinträchtigen die Bedienung der App nicht (laufen im Hintergrund, blockieren keine Eingaben). | Muss |
 | QA-008 | Zuverlässigkeit / Datensicherheit | Es dürfen keine Audio-Dateien verloren gehen. Die gesamte Kette von der Aufnahme über die lokale Speicherung bis zur Synchronisation in den Cloud-Speicher muss robust sein (z. B. bei App-Absturz, leerem Akku, Verbindungsabbruch während des Uploads). | Muss |
 | QA-009 | Austauschbarkeit | Der Cloud-Speicher muss ohne Änderungen an der App austauschbar sein. Der Zugriff erfolgt ausschliesslich über die S3-kompatible API, ohne anbieterspezifische Funktionen in der Anwendungslogik. | Muss |
+| QA-010 | Wartbarkeit | Mobile App und Web-App entstehen aus einer gemeinsamen Codebasis. UI-Komponenten und UI-Funktionen werden geteilt; nur die Aufnahme (und weitere plattformspezifische Teile) ist zusätzlich in der Mobile App vorhanden. | Muss |
 
 ## Offene Fragen

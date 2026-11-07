@@ -21,4 +21,6 @@ Riffic ist eine Mobile App, mit der Musiker Songideen schnell festhalten, ergän
 
 ## Abgrenzung
 
+- Eine Admin-Oberfläche ist vorerst nicht vorgesehen; die Administration erfolgt per CLI (FA-025). Eine Admin-Oberfläche kann später ergänzt werden.
+
 ## Offene Fragen
